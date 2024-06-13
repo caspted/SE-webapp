@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useState, ReactNode, useEffect } from "react";
 import {
   onAuthStateChanged,
@@ -42,7 +43,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (!currentUser) {
-        setUser(currentUser);
+        setUser(null);
+      } else {
+        const loggedUser: User = {
+          id: currentUser.uid,
+          displayName: currentUser.displayName || "",
+          email: currentUser.email || "",
+        };
+        setUser(loggedUser);
       }
     });
     setLoading(false);
