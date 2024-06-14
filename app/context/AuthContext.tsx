@@ -60,6 +60,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const loginWithPopup = async (): Promise<void> => {
     try {
       const { user } = await signInWithPopup(auth, provider);
+
+      if (!user.email?.endsWith("@cpu.edu.ph")) {
+        alert("Invalid email address");
+        logout();
+        throw new Error("Invalid email address");
+      }
+
       const currentUser: User = {
         id: user.uid,
         displayName: user.displayName || "",
@@ -67,6 +74,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       };
       setUser(currentUser);
     } catch (error) {
+      setUser(null);
       console.error(error);
     }
   };
