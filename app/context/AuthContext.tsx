@@ -6,14 +6,11 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 
+import { User } from "../interfaces/User";
 import { auth } from "../utils/firebaseConfig";
-
-interface User {
-  id: string;
-  displayName: string;
-  email: string;
-}
+import { firestore } from "../utils/firebaseConfig";
 
 interface AuthContextValue {
   user: User | null;
@@ -41,16 +38,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const provider = new GoogleAuthProvider();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (!currentUser) {
         setUser(null);
       } else {
-        const loggedUser: User = {
-          id: currentUser.uid,
-          displayName: currentUser.displayName || "",
-          email: currentUser.email || "",
-        };
-        setUser(loggedUser);
+        const loggedUser = await getDoc(
+          doc(firestore, "users", currentUser.uid)
+        );
+        const userData = loggedUser.data();
+        if (userData) {
+          const updatedUser: User = {
+            userId: userData.userId,
+            userName: userData.userName,
+            userEmail: userData.userEmail,
+            userType: userData.userType,
+            userStatus: userData.userStatus,
+            userPermissions: userData.userPermissions,
+            userBalance: userData.userBalance,
+          };
+          setUser(updatedUser);
+        }
       }
     });
     setLoading(false);
@@ -67,12 +74,34 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         throw new Error("Invalid email address");
       }
 
-      const currentUser: User = {
-        id: user.uid,
-        displayName: user.displayName || "",
-        email: user.email || "",
-      };
-      setUser(currentUser);
+      const userDocRef = doc(firestore, "users", user.uid);
+      const currentUser = await getDoc(userDocRef);
+
+      if (!currentUser.exists()) {
+        await setDoc(userDocRef, {
+          userId: user.uid,
+          userName: user.displayName || "",
+          userEmail: user.email || "",
+          userType: "student",
+          userStatus: "not enrolled",
+          userPermissions: "normal",
+          userBalance: "0",
+        });
+      }
+
+      const updatedUser = await getDoc(userDocRef);
+      const userData = updatedUser.data();
+      if (userData) {
+        setUser({
+          userId: userData.userId,
+          userName: userData.userName,
+          userEmail: userData.userEmail,
+          userType: userData.userType,
+          userStatus: userData.userStatus,
+          userPermissions: userData.userPermissions,
+          userBalance: userData.userBalance,
+        });
+      }
     } catch (error) {
       setUser(null);
       console.error(error);
