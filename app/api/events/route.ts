@@ -1,5 +1,5 @@
-import { firestore } from "@/app/utils/firebase";
-import { collection, getDocs, query } from "firebase/firestore";
+import { firestore } from "@/app/utils/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
 export const GET = async (req: Request) => {
   try {
