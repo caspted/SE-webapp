@@ -1,13 +1,14 @@
 import { firestore } from "@/app/utils/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = async (req: Request) => {
+export const GET = async (req: NextRequest) => {
   try {
     const query = await getDocs(collection(firestore, "projects"));
     const projects = query.docs.map((doc) => doc.data());
 
-    return Response.json(projects, { status: 200 });
+    return NextResponse.json(projects, { status: 200 });
   } catch (err: any) {
-    return new Response(err, { status: 500 });
+    return new NextResponse(err, { status: 500 });
   }
 };
