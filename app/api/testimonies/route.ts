@@ -8,7 +8,9 @@ export const GET = async (req: NextRequest) => {
     const testimonies = query.docs.map((doc) => doc.data());
 
     return NextResponse.json(testimonies, { status: 200 });
-  } catch (err: any) {
-    return new NextResponse(err, { status: 500 });
+  } catch (err) {
+    const errorMessage =
+      err instanceof Error ? err.message : "Internal Server Error";
+    return new NextResponse(errorMessage, { status: 500 });
   }
 };
