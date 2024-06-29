@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Header from "../components/Header";
 import Events from "./Events";
 import Projects from "./Projects";
@@ -12,6 +13,7 @@ export default function Home() {
       <Events />
       <Projects />
       <Sponsors />
+      <Footer />      
     </main>
   );
 }
