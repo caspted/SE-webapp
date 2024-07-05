@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-primary-500;
+    @apply bg-primary-500 text-white;
   }
 
   h1 {
@@ -19,8 +19,10 @@
   h3 {
     @apply text-2xl;
   }
+  button {
+    @apply bg-secondary-500 rounded-full px-3 py-1 text-white;
+  }
 }
-
 
 @layer utilities {
   .text-balance {
