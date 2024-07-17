@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Sponsors = () => {
-  return (
-    <div>Sponsors</div>
-  )
-}
+  return <div className="min-h-screen flex items-center justify-center">Sponsors</div>;
+};
 
-export default Sponsors
+export default Sponsors;

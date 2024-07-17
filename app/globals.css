@@ -20,7 +20,7 @@
     @apply text-2xl;
   }
   button {
-    @apply bg-secondary-500 rounded-full px-3 py-1 text-white;
+    @apply bg-secondary-500 rounded-full px-4 py-1 text-white;
   }
 }
 
