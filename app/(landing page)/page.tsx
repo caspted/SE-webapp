@@ -1,4 +1,4 @@
-import { QueryClient } from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Events from "./Events";
@@ -10,30 +10,21 @@ import Testimonials from "./Testimonials";
 import { fetchData } from "../utils/fetchData";
 
 export default async function Home() {
-  const queryClient = new QueryClient({});
-  await queryClient.prefetchQuery({
-    queryKey: ["projects"],
-    queryFn: () =>  fetchData("projects")
-  });
-  await queryClient.prefetchQuery({
-    queryKey: ["events"],
-    queryFn: () => fetchData('events')
-  });
-  await queryClient.prefetchQuery({
-    queryKey: ["testimonies"],
-    queryFn: () => fetchData("testimonies")
-  });
+
+  const queryClient = new QueryClient();
 
   return (
-    <main className="flex flex-col ">
-      <Header />
-      <Hero />
-      <Testimonials />
-      <Events />
-      <Projects />
-      <Sponsors />
-      <Inquiries />
-      <Footer />
-    </main>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <main className="flex flex-col ">
+        <Header />
+        <Hero />
+        <Testimonials />
+        <Events />
+        <Projects />
+        <Sponsors />
+        <Inquiries />
+        <Footer />
+      </main>
+    </HydrationBoundary>
   );
 }
