@@ -7,8 +7,20 @@ import image3 from "@/public/sampleimg3.jpg";
 import ProjectColumn from "../components/ProjectColumn";
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { fetchData } from "../utils/fetchData";
 
 const Projects = () => {
+  const {
+    data: projects,
+    error,
+    isFetching,
+  } = useQuery({
+    queryKey: ["projects"],
+    queryFn: () => fetchData('projects')
+  });
+
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -19,6 +31,15 @@ const Projects = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -300]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, -800]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  if (projects) console.log(projects);
+  if (error)
+    return (
+      <div className="text-center bg-primary-900 rounded-lg px-2 py-1 w-max self-center">
+        <p>Error loading projects</p>
+        <p>{error.message}</p>
+      </div>
+    );
+  if (isFetching) return <h1 className="text-center">Loading Projects...</h1>;
 
   return (
     <main className="flex flex-col min-h-screen relative">

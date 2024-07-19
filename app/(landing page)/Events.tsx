@@ -5,20 +5,30 @@ import React, { useEffect, useRef, useState } from "react";
 import sampleImage from "@/public/sampleimg4.jpeg";
 import OtherEvents from "../components/OtherEvents";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { fetchData } from "../utils/fetchData";
 
 const Events = () => {
-  const [events, setEvents] = useState([]);
+  const {} = useQuery({
+    queryKey: ["events"],
+    queryFn: () => fetchData('events')
+  });
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
+
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   return (
     <main>
       <div className="from-white opacity-20 bg-gradient-to-t h-28" />
-      <div
+      {/* {events && ( */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         ref={ref}
         className="relative min-h-[55vh] md:min-h-screen max-h-[120vh] overflow-hidden w-full flex flex-col justify-between"
       >
@@ -46,11 +56,14 @@ const Events = () => {
         <h3 className="absolute left-3 bottom-3 bg-neutral-800 bg-opacity-70 rounded-3xl px-3 py-1">
           {"{Event Title here}"}
         </h3>
-      </div>
+      </motion.div>
+      {/* )} */}
       <div className="bg-gradient-to-b opacity-20 from-white h-28" />
+      {/* {events && ( */}
       <motion.div style={{ y: y2 }}>
         <OtherEvents className="md:hidden flex-col px-4" />
       </motion.div>
+      {/* )} */}
     </main>
   );
 };
