@@ -10,7 +10,7 @@ import axios from "axios";
 import { fetchData } from "../utils/fetchData";
 
 const Events = () => {
-  const {} = useQuery({
+  const {data: events} = useQuery({
     queryKey: ["events"],
     queryFn: () => fetchData('events')
   });
