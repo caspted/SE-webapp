@@ -12,6 +12,8 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.50.1",
+    "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "framer-motion": "^11.2.12",
     "next": "14.2.3",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@swc/core": "^1.6.3",
     "@swc/jest": "^0.2.36",
+    "@tanstack/react-query-devtools": "^5.50.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/node": "^20",
