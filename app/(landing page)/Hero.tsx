@@ -15,7 +15,7 @@ const Hero = () => {
           placeholder="blur"
         />
 
-        <p className="font-medium text-[20px]"> TRANSFORM YOUR IDEAS INTO A REALITY</p>
+        <p className="font-medium text-[20px] tracking-normal"> TRANSFORM YOUR IDEAS INTO A REALITY</p>
 
         <p className="font-normal text-[14px] ">
           Are you ready to bring your ideas to life and revolutionize the world
