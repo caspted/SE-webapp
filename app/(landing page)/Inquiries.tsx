@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const Inquiries = () => {
   return (
-    <div className='h-screen flex items-center justify-center'>Inquiries</div>
-  )
-}
+    <div className="flex h-screen items-center justify-center">Inquiries</div>
+  );
+};
 
-export default Inquiries
+export default Inquiries;

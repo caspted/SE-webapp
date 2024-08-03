@@ -9,7 +9,8 @@ export const GET = async (req: NextRequest) => {
 
     return NextResponse.json(events, { status: 200 });
   } catch (err) {
-    const errorMessage = err instanceof Error ? err.message : 'Internal Server Error'
+    const errorMessage =
+      err instanceof Error ? err.message : "Internal Server Error";
     return new NextResponse(errorMessage, { status: 500 });
   }
 };

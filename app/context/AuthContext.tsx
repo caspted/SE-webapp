@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setUser(null);
       } else {
         const loggedUser = await getDoc(
-          doc(firestore, "users", currentUser.uid)
+          doc(firestore, "users", currentUser.uid),
         );
         const userData = loggedUser.data();
         if (userData) {

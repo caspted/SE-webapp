@@ -7,7 +7,6 @@ import Projects from "./Projects";
 import Sponsors from "./Sponsors";
 import Testimonials from "./Testimonials";
 
-
 export default function Home() {
   return (
     <main className="flex flex-col">
@@ -18,7 +17,7 @@ export default function Home() {
       <Projects />
       <Sponsors />
       <Inquiries />
-      <Footer />      
+      <Footer />
     </main>
   );
 }
