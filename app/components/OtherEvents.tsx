@@ -33,7 +33,7 @@ const eventVariants = {
 const OtherEvents = ({ className }: { className: string }) => {
   return (
     <motion.div className={`${className} flex flex-col items-end gap-5`}>
-      <div className="flex flex-col gap-5 items-start">
+      <div className="flex flex-col items-start gap-5">
         {sampleEvent.map(({ header, src }, i) => {
           return (
             <motion.div
@@ -43,22 +43,22 @@ const OtherEvents = ({ className }: { className: string }) => {
               variants={eventVariants}
               viewport={{ once: true }}
               key={i}
-              className="flex w-full rounded-3xl overflow-hidden md:w-[50vw]"
+              className="flex w-full overflow-hidden rounded-3xl md:w-[50vw]"
             >
-              <div className="relative min-w-[50%] md:min-w-[25vw] min-h-[30vh]  overflow-hidden rounded-s-3xl items-end flex p-3">
-                <h4 className="bg-neutral-800 px-3 py-1 rounded-2xl bg-opacity-70">
+              <div className="relative flex min-h-[30vh] min-w-[50%] items-end overflow-hidden rounded-s-3xl p-3 md:min-w-[25vw]">
+                <h4 className="rounded-2xl bg-neutral-800 bg-opacity-70 px-3 py-1">
                   {"Event Title"}
                 </h4>
                 <Image
                   src={src}
                   alt={header}
-                  className="object-cover -z-10"
+                  className="-z-10 object-cover"
                   fill
                 />
               </div>
               <div
                 className={
-                  "bg-secondary-900 bg-opacity-100 md:bg-opacity-50 flex justify-center flex-col px-2"
+                  "flex flex-col justify-center bg-secondary-900 bg-opacity-100 px-2 md:bg-opacity-50"
                 }
               >
                 <h4 className="text-lg">May 23, 2024</h4>
@@ -75,7 +75,7 @@ const OtherEvents = ({ className }: { className: string }) => {
         whileInView="animate"
         variants={eventVariants}
         viewport={{ once: true }}
-        className="bg-neutral-900 w-auto p-2 rounded-xl text-lg md:text-xl"
+        className="w-auto rounded-xl bg-neutral-900 p-2 text-lg md:text-xl"
       >
         See more Events here
       </motion.button>

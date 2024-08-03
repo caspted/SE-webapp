@@ -21,19 +21,19 @@ const Projects = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
   return (
-    <main className="flex flex-col min-h-screen relative">
-      <h1 className="py-20 px-[3vw]">
+    <main className="relative flex min-h-screen flex-col">
+      <h1 className="px-[3vw] py-20">
         {"What we've achieved, and what we have done"}
       </h1>
       <div className="relative">
         <div className="absolute h-40 w-full bg-gradient-to-b from-primary-500"></div>{" "}
         <div
           ref={container}
-          className="flex -z-10 flex-row h-[1500px] relative gap-4 px-[4vw] justify-center overflow-hidden py-2 my-2"
+          className="relative -z-10 my-2 flex h-[1500px] flex-row justify-center gap-4 overflow-hidden px-[4vw] py-2"
         >
           <ProjectColumn
             images={[image1, image2, image3]}
-            className="hidden md:flex top-[35%]"
+            className="top-[35%] hidden md:flex"
             y={y}
           />
           <ProjectColumn
@@ -43,19 +43,19 @@ const Projects = () => {
           />
           <ProjectColumn
             images={[image3, image1, image2]}
-            className="hidden lg:flex top-[30%]"
+            className="top-[30%] hidden lg:flex"
             y={y3}
           />
           <ProjectColumn
             images={[image2, image1, image3]}
-            className="hidden xl:flex top-[10%]"
+            className="top-[10%] hidden xl:flex"
             y={y4}
           />
         </div>
         <div className="absolute bottom-0 h-40 w-full bg-gradient-to-t from-primary-500"></div>
       </div>
 
-      <div className="flex justify-center h-16">
+      <div className="flex h-16 justify-center">
         <button className="text-xl">And many more here</button>
       </div>
     </main>
