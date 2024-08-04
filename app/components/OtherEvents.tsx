@@ -56,13 +56,9 @@ const OtherEvents = ({ className }: { className: string }) => {
                   fill
                 />
               </div>
-              <div
-                className={
-                  "flex flex-col justify-center bg-secondary-900 bg-opacity-100 px-2 md:bg-opacity-50"
-                }
-              >
-                <h4 className="text-lg">May 23, 2024</h4>
-                <h3 className="bg-opacity-50">{header}</h3>
+              <div className="flex flex-col justify-center bg-secondary-900 bg-opacity-100 px-2">
+                <h4 className="text-base md:text-lg">May 23, 2024</h4>
+                <h3 className="bg-opacity-50 text-xl md:text-2xl">{header}</h3>
               </div>
             </motion.div>
           );
