@@ -5,6 +5,7 @@ import img from "@/public/sampleimg.jpg";
 import img2 from "@/public/sampleimg2.jpeg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa6";
 
 const sampleEvent = [
   {
@@ -32,8 +33,8 @@ const eventVariants = {
 
 const OtherEvents = ({ className }: { className: string }) => {
   return (
-    <motion.div className={`${className} flex flex-col items-end gap-5`}>
-      <div className="flex flex-col items-start gap-5">
+    <motion.div className={`flex flex-col items-center lg:items-end gap-5 ${className}`}>
+      <div className="flex flex-col lg:flex-col  gap-5 ">
         {sampleEvent.map(({ header, src }, i) => {
           return (
             <motion.div
@@ -43,9 +44,9 @@ const OtherEvents = ({ className }: { className: string }) => {
               variants={eventVariants}
               viewport={{ once: true }}
               key={i}
-              className="flex w-full overflow-hidden rounded-3xl md:w-[50vw]"
+              className="flex w-full overflow-hidden rounded-3xl lg:w-[50vw]"
             >
-              <div className="relative flex min-h-[30vh] min-w-[50%] items-end overflow-hidden rounded-s-3xl p-3 md:min-w-[25vw]">
+              <div className="relative flex min-h-[30vh] min-w-[50%] items-end overflow-hidden p-3 lg:min-w-[25vw]">
                 <h4 className="rounded-2xl bg-neutral-800 bg-opacity-70 px-3 py-1">
                   {"Event Title"}
                 </h4>
@@ -56,13 +57,14 @@ const OtherEvents = ({ className }: { className: string }) => {
                   fill
                 />
               </div>
-              <div
-                className={
-                  "flex flex-col justify-center bg-secondary-900 bg-opacity-100 px-2 md:bg-opacity-50"
-                }
-              >
-                <h4 className="text-lg">May 23, 2024</h4>
-                <h3 className="bg-opacity-50">{header}</h3>
+              <div className="flex flex-col justify-center gap-4 bg-secondary-900 p-2 ">
+                <div>
+                  <h4 className="text-base">May 23, 2024</h4>
+                  <h3 className="bg-opacity-50 text-xl font-bold ">{header}</h3>
+                </div>
+                <button className="flex items-center gap-2 text-secondary-500 bg-transparent">
+                  Check out this event <FaArrowRight />
+                </button>
               </div>
             </motion.div>
           );
@@ -75,7 +77,7 @@ const OtherEvents = ({ className }: { className: string }) => {
         whileInView="animate"
         variants={eventVariants}
         viewport={{ once: true }}
-        className="w-auto rounded-xl bg-neutral-900 p-2 text-lg md:text-xl"
+        className="w-max rounded-xl bg-neutral-900 p-2 text-lg md:text-xl"
       >
         See more Events here
       </motion.button>
