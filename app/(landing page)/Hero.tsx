@@ -1,19 +1,36 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import BackgroundImage from "@/public/HeroBg.png";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
+
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 300]);
   return (
-    <div className="relative flex max-h-[325px] min-h-[55vh] justify-center space-y-2 text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px]">
-      <Image
-        src={BackgroundImage}
-        alt="random-image"
-        fill
-        className="bottom-0 -z-10 h-full object-cover lg:bg-no-repeat"
-        placeholder="blur"
-      />
+    <div
+      ref={container}
+      className="flex relative max-h-[] min-h-[75vh] justify-center space-y-2 text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px] overflow-hidden"
+    >
+      <motion.div className="w-full h-full absolute overflow-hidden"
+      
+      style={{ y: parallaxY }}>
+        <Image
+          src={BackgroundImage}
+          alt="random-image"
+          fill
+          className="bottom-0 -z-10 h-full object-cover lg:bg-no-repeat"
+          placeholder="blur"
+        />
+      </motion.div>
       <div className="z-10 flex max-w-[450px] flex-col items-center justify-center space-y-1 p-4 md:items-start md:pl-8 md:text-start lg:space-y-3">
         <p className="text-[20px] font-medium leading-none md:text-[30px] xl:text-[48px] xl:font-semibold xl:tracking-wide">
           TRANSFORM YOUR IDEAS INTO REALITY
