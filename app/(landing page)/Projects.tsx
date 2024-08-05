@@ -22,11 +22,11 @@ const Projects = () => {
 
   return (
     <main className="relative flex min-h-screen flex-col">
-      <h1 className="px-[3vw] py-20">
+      <h1 className="px-4 py-20 text-center md:text-start">
         {"What we've achieved, and what we have done"}
       </h1>
       <div className="relative">
-        <div className="absolute h-40 w-full bg-gradient-to-b from-primary-500"></div>{" "}
+        <div className="absolute h-40 w-full bg-gradient-to-b from-primary-900"></div>{" "}
         <div
           ref={container}
           className="relative -z-10 my-2 flex h-[1500px] flex-row justify-center gap-4 overflow-hidden px-[4vw] py-2"
@@ -52,7 +52,7 @@ const Projects = () => {
             y={y4}
           />
         </div>
-        <div className="absolute bottom-0 h-40 w-full bg-gradient-to-t from-primary-500"></div>
+        <div className="absolute bottom-0 h-40 w-full bg-gradient-to-t from-primary-900"></div>
       </div>
 
       <div className="flex h-16 justify-center">
