@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <div
       ref={container}
-      className="flex relative max-h-[] min-h-[75vh] justify-center space-y-2 text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px] overflow-hidden"
+      className="flex relative min-h-[75vh] justify-center space-y-2 text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px] overflow-hidden"
     >
       <motion.div className="w-full h-full absolute overflow-hidden"
       
@@ -51,7 +51,7 @@ const Hero = () => {
           </Link>
           <Link
             href={"/"}
-            className="md:gap-none flex items-center gap-1 text-[8px] font-semibold text-[#FE9901] underline underline-offset-2 lg:text-[14px] xl:text-[20px]"
+            className="md:gap-none flex items-center gap-1 text-[8px] font-semibold underline underline-offset-2 lg:text-[14px] xl:text-[20px]"
           >
             VIEW OUR CURRICULUM
             <FaArrowRight className="hidden md:block" />
