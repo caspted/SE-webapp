@@ -4,12 +4,10 @@ import next from "@/public/next.svg";
 
 const Header = () => {
   return (
-    <main className={"flex fixed p-5 justify-between w-full z-50"}>
+    <main className={"fixed z-50 flex w-full justify-between p-5"}>
       <Image src={next} width={50} height={50} alt="bg image" />
-      <header className="md:hidden block">
-        <button>
-          Menu
-        </button>
+      <header className="block md:hidden">
+        <button>Menu</button>
       </header>
       <header className="hidden md:flex"></header>
     </main>

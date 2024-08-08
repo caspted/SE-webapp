@@ -10,7 +10,6 @@ import Testimonials from "./Testimonials";
 import { fetchData } from "../utils/fetchData";
 
 export default async function Home() {
-
   const queryClient = new QueryClient();
 
   return (
