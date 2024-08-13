@@ -33,8 +33,10 @@ const eventVariants = {
 
 const OtherEvents = ({ className }: { className: string }) => {
   return (
-    <motion.div className={`flex flex-col items-center lg:items-end gap-5 ${className}`}>
-      <div className="flex flex-col lg:flex-col  gap-5 ">
+    <motion.div
+      className={`flex flex-col items-center gap-5 lg:items-end ${className}`}
+    >
+      <div className="flex flex-col gap-5 lg:flex-col">
         {sampleEvent.map(({ header, src }, i) => {
           return (
             <motion.div
@@ -57,12 +59,12 @@ const OtherEvents = ({ className }: { className: string }) => {
                   fill
                 />
               </div>
-              <div className="flex flex-col justify-center gap-4 bg-secondary-900 p-2 ">
+              <div className="flex flex-col justify-center gap-4 bg-secondary-900 p-2">
                 <div>
                   <h4 className="text-base">May 23, 2024</h4>
-                  <h3 className="bg-opacity-50 text-xl font-bold ">{header}</h3>
+                  <h3 className="bg-opacity-50 text-xl font-bold">{header}</h3>
                 </div>
-                <button className="flex items-center gap-2 text-secondary-500 bg-transparent">
+                <button className="flex items-center gap-2 bg-transparent text-secondary-500">
                   Check out this event <FaArrowRight />
                 </button>
               </div>

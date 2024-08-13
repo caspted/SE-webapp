@@ -18,11 +18,12 @@ const Hero = () => {
   return (
     <div
       ref={container}
-      className="flex relative min-h-[75vh] justify-center space-y-2 text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px] overflow-hidden"
+      className="relative flex min-h-[75vh] justify-center space-y-2 overflow-hidden text-center md:max-h-[498px] md:justify-start lg:max-h-[660px] xl:max-h-[720px]"
     >
-      <motion.div className="w-full h-full absolute overflow-hidden"
-      
-      style={{ y: parallaxY }}>
+      <motion.div
+        className="absolute h-full w-full overflow-hidden"
+        style={{ y: parallaxY }}
+      >
         <Image
           src={BackgroundImage}
           alt="random-image"
