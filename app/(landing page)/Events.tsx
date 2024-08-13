@@ -38,18 +38,15 @@ const Events = () => {
           </h2>
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-gradient-to-r from-primary-900 opacity-50"></div>
           <button className="my-4 flex items-center justify-between gap-2 rounded-md sm:w-max">
-            Check out this event
-            <span>
-              <FaArrowRight />
-            </span>
+            <FaArrowRight />
           </button>
         </div>
-        <div className="flex justify-between items-end w-screen p-5">
-          <h3 className=" w-max rounded-3xl bg-neutral-800 bg-opacity-80 px-3 py-1 text-sm h-max">
+        <div className="flex w-screen items-end justify-between p-5">
+          <h3 className="h-max w-max rounded-3xl bg-neutral-800 bg-opacity-80 px-3 py-1 text-sm">
             {"{Event Title here}"}
           </h3>
           <motion.div style={{ y }}>
-            <OtherEvents className="hidden px-4 lg:flex " />
+            <OtherEvents className="hidden px-4 lg:flex" />
           </motion.div>
         </div>
       </div>
