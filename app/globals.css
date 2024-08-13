@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   body {
     @apply select-none bg-primary-900 text-white;
@@ -19,7 +20,7 @@
     @apply text-2xl;
   }
   button {
-    @apply rounded-full bg-indigo-900 px-4 py-1 text-white;
+    @apply rounded-full bg-primary-700 px-4 py-1 text-white;
   }
 }
 
