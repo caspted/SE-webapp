@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import Events from "./Events";
 import Hero from "./Hero";
 import Inquiries from "./Inquiries";
@@ -10,7 +10,7 @@ import Testimonials from "./Testimonials";
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <Header />
+      <NavBar />
       <Hero />
       <Testimonials />
       <Events />
