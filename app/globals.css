@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
-    @apply select-none bg-primary-900 text-white;
+    @apply bg-primary-900 text-white;
   }
 
   h1 {

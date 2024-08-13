@@ -1,8 +1,9 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import React from "react";
 import { MotionValue, motion } from "framer-motion";
+import LandingProject from "./LandingProject";
 
 const ProjectColumn = ({
   images,
@@ -20,12 +21,7 @@ const ProjectColumn = ({
     >
       {images.map((image, index) => {
         return (
-          <div
-            key={index}
-            className="relative h-full w-full overflow-hidden rounded-xl transition-all"
-          >
-            <Image src={image} alt="Image" fill className="object-cover" />
-          </div>
+          <LandingProject title="title project" key={index} image={image} />
         );
       })}
     </motion.div>
