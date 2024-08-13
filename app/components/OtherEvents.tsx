@@ -59,13 +59,13 @@ const OtherEvents = ({ className }: { className: string }) => {
                   fill
                 />
               </div>
-              <div className="flex flex-col justify-center gap-4 bg-secondary-900 p-2">
+              <div className="flex flex-col justify-between gap-4 bg-primary-700 p-4">
                 <div>
                   <h4 className="text-base">May 23, 2024</h4>
-                  <h3 className="bg-opacity-50 text-xl font-bold">{header}</h3>
+                  <h5 className="bg-opacity-50 font-bold">{header}</h5>
                 </div>
-                <button className="flex items-center gap-2 bg-transparent text-secondary-500">
-                  Check out this event <FaArrowRight />
+                <button className="flex items-center p-0 bg-transparent text-primary-300">
+                  <FaArrowRight />
                 </button>
               </div>
             </motion.div>
