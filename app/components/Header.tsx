@@ -27,8 +27,8 @@ const Header = () => {
       <div
         className={
           menuOpen
-            ? "fixed -right-0 top-0 h-screen w-[65%] bg-secondary-700 p-10 duration-500 ease-in md:w-[30%]"
-            : "fixed -right-[100%] top-0 h-screen w-[65%] p-10 duration-500 ease-in md:w-[30%]"
+            ? "fixed -right-0 top-0 h-screen w-[65%] bg-secondary-700 p-10 duration-500 ease-in md:w-[30%] md:duration-100 lg:w-[20%]"
+            : "fixed -right-[100%] top-0 h-screen w-[65%] p-10 duration-500 ease-in md:w-[30%] md:duration-100 lg:w-[20%]"
         }
       >
         <div className="flex w-full flex-col justify-center duration-500 ease-in-out">

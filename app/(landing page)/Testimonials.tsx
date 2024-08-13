@@ -13,14 +13,14 @@ const testimonials = [
     position: "Faculty Member",
   },
   {
-    image: "/paul2.jpg",
+    image: "/wendell.jpg",
     text: "SE! please, nami ang SE,istg tbh omg wth frfr",
     name: "Jane Doe",
     position: "Student",
   },
   {
-    image: "/paul3.jpg",
-    text: "Gwapo ako katama, so pili a nyo na ang SE please please dont prove Im right And please, pleasе, please dont bring me to tеars when I just did my makeup so nice.",
+    image: "/Nicholae.jpg",
+    text: "Gwapo ako katama, so pili a nyo na ang SE please please dont prove Im right And please, pleasе, please dont bring me to tеars when I just did my makeup so nice. I LOVE IT SSSUUUPPPEEERR!",
     name: "John Smith",
     position: "Alumnus",
   },
