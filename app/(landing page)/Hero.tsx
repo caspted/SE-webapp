@@ -32,30 +32,28 @@ const Hero = () => {
           placeholder="blur"
         />
       </motion.div>
-      <div className="z-10 flex max-w-[450px] flex-col items-center justify-center space-y-1 p-4 md:items-start md:pl-8 md:text-start lg:space-y-3">
-        <p className="text-[20px] font-medium leading-none md:text-[30px] xl:text-[48px] xl:font-semibold xl:tracking-wide">
+      <div className="z-10 flex max-w-[450px] flex-col items-center justify-center gap-3 p-4 md:items-start md:pl-8 md:text-start">
+        <h1 className="font-medium xl:font-semibold xl:tracking-wide">
           TRANSFORM YOUR IDEAS INTO REALITY
-        </p>
-
-        <p className="text-[14px] font-normal leading-tight md:max-w-96 lg:max-w-80 xl:text-[20px]">
+        </h1>
+        <p className="font-normal text-sm leading-tight md:max-w-96 lg:max-w-80 xl:text-xl">
           Are you ready to bring your ideas to life and revolutionize the world
           with technology? Enroll in our Software Engineering program today and
           unlock endless possibilities!
         </p>
-
-        <div className="flex flex-col items-center justify-center gap-3 pt-2 md:flex-row xl:pt-6">
+        <div className="flex flex-col items-center justify-center gap-3 md:flex-row ">
           <Link
             href={"/"}
-            className="text-center text-[10px] font-semibold lg:text-[14px] xl:text-[20px]"
+            className="text-center text-sm font-semibold lg:text-md xl:text-xl"
           >
             <button>Inquire</button>
           </Link>
           <Link
             href={"/"}
-            className="md:gap-none flex items-center gap-1 text-[8px] font-semibold underline underline-offset-2 lg:text-[14px] xl:text-[20px]"
+            className=" flex items-center gap-1 text-sm font-semibold underline underline-offset-2 lg:text-[14px] xl:text-[20px] w-max"
           >
             VIEW OUR CURRICULUM
-            <FaArrowRight className="hidden md:block" />
+            <FaArrowRight />
           </Link>
         </div>
       </div>
