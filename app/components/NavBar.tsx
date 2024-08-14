@@ -25,7 +25,7 @@ const NavBar = () => {
         <AiOutlineMenu size={25} />
       </button>
       <div
-        className={`fixed -right-0 top-0 h-screen bg-secondary-700 p-10 transition-all duration-1000 ease-in-out md:w-[30%] lg:w-[20%] ${!menuOpen && "-right-[100%]"}`}
+        className={`fixed -right-0 top-0 h-screen bg-secondary-700 bg-opacity-75 p-10 transition-all duration-1000 ease-in-out md:w-[30%] lg:w-[20%] ${!menuOpen && "-right-[100%]"}`}
       >
         <div className="flex w-full flex-col justify-center duration-500 ease-in-out">
           <Link href="/" className="rounded-lg p-2 hover:bg-secondary-500">
