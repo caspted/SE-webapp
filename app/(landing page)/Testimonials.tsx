@@ -51,7 +51,7 @@ const Testimonials = () => {
               src={testimonials[currentIndex].image}
               alt="Person"
               fill
-              className="w-full rounded-3xl object-fill"
+              className="w-full rounded-3xl object-cover"
             />
             <button
               className="absolute left-[0px] top-1/2 -translate-y-1/2 transform rounded-full bg-white p-4 text-black md:left-[-30px] md:p-6"
