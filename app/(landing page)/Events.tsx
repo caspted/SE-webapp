@@ -12,10 +12,12 @@ const Events = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start center", "end center"],
+    offset: ["start center", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
+  const [showPhoto, setShowPhoto] = useState(false);
   return (
     <main>
       <div className="h-28 bg-gradient-to-t from-white opacity-20" />
@@ -30,7 +32,13 @@ const Events = () => {
           className="-z-10 h-full object-cover"
           placeholder="blur"
         />
-        <div className="relative mt-10 flex flex-col p-5 md:w-[40vw]">
+        <div
+          className={`absolute -z-10 h-full w-full bg-black opacity-50 ${showPhoto && "opacity-[0%]"} transition-opacity duration-500`}
+
+        />
+        <div
+          className={`relative mt-10 flex flex-col p-5 md:w-[40vw] ${showPhoto && "opacity-0"} transition-all duration-500`}
+        >
           <h3>March 12, 2024</h3>
           <h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
@@ -42,12 +50,26 @@ const Events = () => {
           </button>
         </div>
         <div className="flex w-screen items-end justify-between p-5">
-          <h3 className="h-max w-max rounded-3xl bg-neutral-800 bg-opacity-80 px-3 py-1 text-sm">
-            {"{Event Title here}"}
-          </h3>
-          <motion.div style={{ y }}>
-            <OtherEvents className="hidden px-4 lg:flex" />
-          </motion.div>
+          <div className="space-y-2">
+            <button
+              onClick={() => setShowPhoto(!showPhoto)}
+              className={`bg-opacity-70 text-xs`}
+            >
+              {showPhoto
+                ? "Click here to hide photo"
+                : "Click here to view photo"}
+            </button>
+            <h3 className="h-max w-max rounded-3xl bg-neutral-800 bg-opacity-80 px-3 py-1 text-sm">
+              {"{Event Title here}"}
+            </h3>
+          </div>
+          <div
+            className={`${showPhoto && "opacity-0"} transition-all duration-500`}
+          >
+            <motion.div style={{ y }}>
+              <OtherEvents className="hidden px-4 lg:flex" />
+            </motion.div>
+          </div>
         </div>
       </div>
       <div className="h-28 bg-gradient-to-b from-white opacity-20" />
