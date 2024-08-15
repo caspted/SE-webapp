@@ -29,7 +29,7 @@ const Projects = () => {
         {"What we've achieved, and what we have done"}
       </h1>
       <div className="relative">
-        <div className="absolute  w-full bg-gradient-to-b from-primary-900" />
+        <div className="absolute w-full bg-gradient-to-b from-primary-900" />
         <div
           ref={container}
           className="relative my-2 flex h-[1500px] flex-row justify-center gap-4 overflow-hidden px-[4vw] py-2"

@@ -16,17 +16,17 @@ const Inquiries = () => {
   };
 
   return (
-    <div className="flex flex-col items-center px-4 md:px-8 py-20">
+    <div className="flex flex-col items-center px-4 py-20 md:px-8">
       <div className="max-w-screen-md md:flex md:space-x-4 lg:space-x-8 xl:space-x-16">
         <div className="md:w-72 lg:w-80 xl:w-96">
           <h1 className="text-5xl font-semibold">Any Questions? We Got You.</h1>
           <p className="text-base font-normal">
             Our Software Engineering course is designed to be comprehensive, but
-            we know questions can come up. Whether it&apos;s about course content,
-            project deadlines, or technical requirements, we&apos;re here to help.
-            Reach out via our contact form, email, or live chat for quick and
-            detailed responses. Your success is our priority, and we&apos;re
-            committed to providing the support you need to excel.
+            we know questions can come up. Whether it&apos;s about course
+            content, project deadlines, or technical requirements, we&apos;re
+            here to help. Reach out via our contact form, email, or live chat
+            for quick and detailed responses. Your success is our priority, and
+            we&apos;re committed to providing the support you need to excel.
           </p>
         </div>
         <div className="my-12 flex flex-1 flex-col items-center space-y-8 md:my-0">

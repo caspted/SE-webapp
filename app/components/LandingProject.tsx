@@ -9,7 +9,7 @@ interface LandingProjectProps {
 
 const LandingProject = ({ title, image }: LandingProjectProps) => {
   return (
-    <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl transition-all drop-shadow-lg">
+    <div className="group relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl drop-shadow-lg transition-all">
       <Image
         src={image}
         alt="Image"

@@ -1,23 +1,27 @@
+import Image from "next/image";
 import React from "react";
+import Logo from "@/public/SeLogo.png";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="w-full rounded-l rounded-t-[20px] bg-shades-light">
       <div className="mt-7 flex flex-col items-center justify-center px-4 text-black md:flex-row md:justify-evenly md:px-8 lg:justify-start">
         <div className="flex flex-col items-center justify-center lg:w-96 lg:items-start">
-          <img
-            src="Logo.png"
+          <Image
+            src={Logo}
             alt="PSSE Logo"
-            className="h-[65px] w-[65px] lg:h-28 lg:w-28"
+            height={65}
+            width={65}
+            className="lg:h-28 lg:w-28"
           />
           <p className="w-72 text-center lg:w-[350px] lg:text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
           <div className="flex space-x-6 md:mt-2 lg:hidden">
-            <img src="Copyright.png" alt="Copyright" className="h-8 w-8" />
-            <img src="Facebook.png" alt="Facebook" className="h-8 w-8" />
-            <img src="LinkedIn.png" alt="LinkedIn" className="h-8 w-8" />
-            <img src="Instagram.png" alt="Instagram" className="h-8 w-8" />
+            <FaFacebook height={16} width={16} />
+            <FaLinkedin height={16} width={16} />
+            <FaInstagram height={16} width={16} />
           </div>
         </div>
 

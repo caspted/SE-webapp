@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const TempProject = () => {
   return (
-    <div className='h-full bg-primary-700 w-full drop-shadow-xl items-center justify-center rounded-xl'>
-      
-    </div>
-  )
-}
+    <div className="h-full w-full items-center justify-center rounded-xl bg-primary-700 drop-shadow-xl"></div>
+  );
+};
 
-export default TempProject
+export default TempProject;
