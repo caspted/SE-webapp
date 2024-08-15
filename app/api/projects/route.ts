@@ -1,4 +1,4 @@
-import { firestore } from "@/app/utils/firebaseConfig";
+import { firestore } from "app/utils/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -9,7 +9,8 @@ export const GET = async (req: NextRequest) => {
 
     return NextResponse.json(projects, { status: 200 });
   } catch (err) {
-    const errorMessage = err instanceof Error ? err.message : 'Internal Server Error'
+    const errorMessage =
+      err instanceof Error ? err.message : "Internal Server Error";
     return new NextResponse(errorMessage, { status: 500 });
   }
 };
