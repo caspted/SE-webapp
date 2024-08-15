@@ -18,10 +18,10 @@ const Projects = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, -1200]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, -800]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, -400]);
 
   return (
     <main className="relative flex min-h-screen flex-col">
@@ -29,29 +29,29 @@ const Projects = () => {
         {"What we've achieved, and what we have done"}
       </h1>
       <div className="relative">
-        <div className="absolute h-40 w-full bg-gradient-to-b from-primary-900" />{" "}
+        <div className="absolute  w-full bg-gradient-to-b from-primary-900" />
         <div
           ref={container}
           className="relative my-2 flex h-[1500px] flex-row justify-center gap-4 overflow-hidden px-[4vw] py-2"
         >
           <ProjectColumn
             images={[image1, image2, image3]}
-            className="top-[35%] hidden md:flex"
+            className="-top-[25%] hidden md:flex"
             y={y}
           />
           <ProjectColumn
             images={[image6, image4, image2]}
-            className="top-[10%]"
+            className=""
             y={y2}
           />
           <ProjectColumn
             images={[image3, image1, image5]}
-            className="top-[30%] hidden lg:flex"
+            className="-top-[22%] hidden lg:flex"
             y={y3}
           />
           <ProjectColumn
             images={[image2, image6, image3]}
-            className="top-[10%] hidden xl:flex"
+            className="-top-[10%] hidden xl:flex"
             y={y4}
           />
         </div>
