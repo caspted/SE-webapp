@@ -64,7 +64,7 @@ const OtherEvents = ({ className }: { className: string }) => {
                   <h4 className="text-base">May 23, 2024</h4>
                   <h5 className="bg-opacity-50 font-bold">{header}</h5>
                 </div>
-                <button className="flex items-center p-0 bg-transparent text-primary-300">
+                <button className="flex items-center bg-transparent p-0 text-primary-300">
                   <FaArrowRight />
                 </button>
               </div>

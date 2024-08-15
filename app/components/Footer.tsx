@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const Footer = () => {
   return (
     <div className="w-full rounded-l rounded-t-[20px] bg-shades-light">

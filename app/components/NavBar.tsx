@@ -67,12 +67,6 @@ const NavBar = () => {
                   >
                     Faculty
                   </Link>
-                  <Link
-                    href="/"
-                    className="rounded-lg p-2 hover:bg-secondary-500"
-                  >
-                    Staff
-                  </Link>
                 </div>
               )}
             </div>

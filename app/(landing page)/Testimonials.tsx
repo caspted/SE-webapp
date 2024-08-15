@@ -42,16 +42,16 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-primary-900 p-4 text-white md:p-8">
+    <div className="flex flex-col bg-primary-900 p-4 text-white md:p-8">
       <h1 className="mb-6 text-4xl font-semibold md:mb-6"> SE Testimonials</h1>
-      <div className="relative flex h-[400px] justify-center md:justify-around">
+      <div className="relative flex h-[400px] justify-center md:gap-20">
         <div className="flex h-[60vh] max-h-[400px] w-[60vh] max-w-[400px] flex-col">
           <div className="relative flex h-full w-full rounded-3xl">
             <Image
               src={testimonials[currentIndex].image}
               alt="Person"
               fill
-              className="w-full rounded-3xl object-fill"
+              className="w-full rounded-3xl object-cover"
             />
             <button
               className="absolute left-[0px] top-1/2 -translate-y-1/2 transform rounded-full bg-white p-4 text-black md:left-[-30px] md:p-6"
@@ -94,8 +94,8 @@ const Testimonials = () => {
           </p>
         </div>
       </div>
-      <div className="block md:hidden">
-        <FaQuoteLeft className="mt-6" size={57} />
+      <div className="block max-w-md self-center md:hidden">
+        <FaQuoteLeft className="mt-6" size={30} />
         <div className="mb-8 mt-2 text-base font-normal">
           <p>{testimonials[currentIndex].text}</p>
         </div>

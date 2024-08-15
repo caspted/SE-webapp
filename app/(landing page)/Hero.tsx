@@ -36,21 +36,21 @@ const Hero = () => {
         <h1 className="font-medium xl:font-semibold xl:tracking-wide">
           TRANSFORM YOUR IDEAS INTO REALITY
         </h1>
-        <p className="font-normal text-sm leading-tight md:max-w-96 lg:max-w-80 xl:text-xl">
+        <p className="text-sm font-normal leading-tight md:max-w-96 lg:max-w-80 xl:text-xl">
           Are you ready to bring your ideas to life and revolutionize the world
           with technology? Enroll in our Software Engineering program today and
           unlock endless possibilities!
         </p>
-        <div className="flex flex-col items-center justify-center gap-3 md:flex-row ">
+        <div className="flex flex-col items-center justify-center gap-3 md:flex-row">
           <Link
             href={"/"}
-            className="text-center text-sm font-semibold lg:text-md xl:text-xl"
+            className="lg:text-md text-center text-sm font-semibold xl:text-xl"
           >
             <button>Inquire</button>
           </Link>
           <Link
             href={"/"}
-            className=" flex items-center gap-1 text-sm font-semibold underline underline-offset-2 lg:text-[14px] xl:text-[20px] w-max"
+            className="flex w-max items-center gap-1 text-sm font-semibold underline underline-offset-2 lg:text-[14px] xl:text-[20px]"
           >
             VIEW OUR CURRICULUM
             <FaArrowRight />

@@ -34,7 +34,6 @@ const Events = () => {
         />
         <div
           className={`absolute -z-10 h-full w-full bg-black opacity-50 ${showPhoto && "opacity-[0%]"} transition-opacity duration-500`}
-
         />
         <div
           className={`relative mt-10 flex flex-col p-5 md:w-[40vw] ${showPhoto && "opacity-0"} transition-all duration-500`}

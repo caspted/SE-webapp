@@ -9,7 +9,7 @@ import Testimonials from "./Testimonials";
 
 export default function Home() {
   return (
-    <main className="select-none flex flex-col">
+    <main className="flex select-none flex-col">
       <NavBar />
       <Hero />
       <Testimonials />

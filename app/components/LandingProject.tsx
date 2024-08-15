@@ -16,8 +16,8 @@ const LandingProject = ({ title, image }: LandingProjectProps) => {
         fill
         className="-z-10 object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute -z-10 bg-black h-full w-full opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
-      <div className="group-hover:opacity-100 opacity-0 duration-700 flex items-center flex-col gap-2" >
+      <div className="absolute -z-10 h-full w-full bg-black opacity-0 transition-opacity duration-500 group-hover:opacity-40"></div>
+      <div className="flex flex-col items-center gap-2 opacity-0 duration-700 group-hover:opacity-100">
         <h2>{title}</h2>
         {/* change into link if project is available */}
         <button>
